@@ -1,113 +1,170 @@
+import Navbar from "@/components/Navs/Navbar";
 import Image from "next/image";
+import Link from "next/link";
+import LandingPageBanner from "@/assets/banners/landing_page_banner.jpg"
+import Interactive from "@/assets/banners/interactive.jpg"
+import Collaborative from "@/assets/banners/collab.jpg"
+import Progressive from "@/assets/banners/progress.jpg"
+import { MdOutlineAttachEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoGlobeOutline } from "react-icons/io5";
+
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+
+
+    <div className=" bg-gray-100">
+      {/* Hero Section */}
+      <section className="relative bg-black text-white h-80">
+        <div className="absolute inset-0">
+          <Image
+            src={LandingPageBanner}
+            alt="Classroom Background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="opacity-50"
+          />
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+        <div className="relative max-w-6xl mx-auto px-4 py-16 text-center">
+          <h1 className="text-4xl font-bold mb-4">Welcome to Classroom Pro</h1>
+          <p className="text-lg mb-8">
+            The ultimate tool for educators and students to connect, learn, and collaborate seamlessly.
           </p>
-        </a>
+          <Link href="/dashboard">
+            <p className="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-gray-100 transition">
+              Open Classroom
+            </p>
+          </Link>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Features</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature Card 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Image
+                src={Interactive}
+                alt="Feature 1"
+                width={500}
+                height={300}
+                className="rounded-lg mb-4"
+              />
+              <h3 className="text-xl font-semibold mb-2">Interactive Lessons</h3>
+              <p>
+                Create and manage engaging lessons with interactive elements and real-time feedback.
+              </p>
+            </div>
+            {/* Feature Card 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Image
+                src={Collaborative}
+                alt="Feature 2"
+                width={500}
+                height={300}
+                className="rounded-lg mb-4"
+              />
+              <h3 className="text-xl font-semibold mb-2">Collaborative Tools</h3>
+              <p>
+                Facilitate group projects and discussions with built-in collaborative tools and resources.
+              </p>
+            </div>
+            {/* Feature Card 3 */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Image
+                src={Progressive}
+                alt="Feature 3"
+                width={500}
+                height={300}
+                className="rounded-lg mb-4"
+              />
+              <h3 className="text-xl font-semibold mb-2">Progress Tracking</h3>
+              <p>
+                Track student progress and performance with detailed analytics and reports.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-6">
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+        <div className="mt-16 w-full flex items-center justify-center dark:bg-gray-900">
+
+
+          <div
+            className="relative w-full max-w-2xl my-8 md:my-12 flex flex-col items-start space-y-2 sm:flex-row sm:space-y-0 sm:space-x- px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">
+
+            <span className="absolute text-xs font-medium top-0 left-0 rounded-br-lg rounded-tl-lg px-2 py-1 bg-primary-100 dark:bg-gray-900 dark:text-gray-300 border-gray-400 dark:border-gray-400 border-b-2 border-r-2 border-dashed ">
+              Designed and Developed by
             </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div className="w-full flex flex-col md:flex-row items-start ">
+
+              <div className="w-full md:w-1/5 flex justify-center sm:justify-start sm:w-auto">
+                <img className="object-cover w-24 h-24 mt-3 mr-3 rounded-full" src="https://avatars.githubusercontent.com/u/62717967?v=4" />
+              </div>
+
+              <div className="w-full md:w-4/5  sm:w-auto flex flex-col items-center sm:items-start justify-center  mt-2">
+
+                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
+                  Swayanshu Panda
+                </p>
+
+                <div className="mb-4 md:text-xs text-gray-400 text-justify">
+                  <p>A newly skilled full stack developer with extensive experience in React, Next.js, Node.js, databases. Adept at building robust, scalable web applications, leveraging modern frameworks and cloud infrastructure to deliver high-performance solutions. Proficient in both front-end and back-end development, with a strong focus on optimizing user experiences and ensuring seamless integration across platforms.</p>
+                </div>
+
+                <div className="flex gap-6 mt-2">
+
+                  <a title="github url" href="https://github.com/swayanshu-2003" target="_blank"
+                    rel="noopener noreferrer">
+
+                    <FaGithub className='text-2xl text-white' />
+
+                  </a>
+
+                  <a title="website url" href="https://www.linkedin.com/in/swayanshupanda/" target="_blank" rel="noopener noreferrer">
+
+                    <FaLinkedin className='text-2xl text-white' />
+
+                  </a>
+                  <a title="website url" href="https://swayanshu-2003.github.io/portfolio" target="_blank" rel="noopener noreferrer">
+
+                    <IoGlobeOutline className='text-2xl text-white' />
+
+                  </a>
+                  <a title="website url" href="https://swayanshu-2003.github.io/portfolio" target="_blank" rel="noopener noreferrer">
+
+                    <MdOutlineAttachEmail className='text-2xl text-white' />
+
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p>&copy; 2024 ClassLink. All rights reserved.</p>
+        </div>
+
+
+
+
+      </footer>
+    </div>
+
+
+
   );
 }
